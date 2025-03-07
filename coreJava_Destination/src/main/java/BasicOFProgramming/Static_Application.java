@@ -21,13 +21,13 @@ public class Static_Application {
 
 class Former{
     double principle;
-    static double rate;
+    static double rate=7.97;
     double time;
     double si;
 
-    static{
-        rate = 7.897;
-    }
+//    static{
+//        rate = 7.897;
+//    }
 
     void collectionData(){
         Scanner sc =new Scanner(System.in);
