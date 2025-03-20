@@ -337,7 +337,7 @@ public class Alpha {
 
     static void y(int i){
             for (int j=0; j<n; j++){
-                if((j==i && i<n/2) || (j==n/2 && i>=n/2) || (j==n-i-1 && i<n/2)) {
+                if((j==i && i<n/2) || (j==n/2 && i>=n/2) || (i+j==(n-1) && i<n/2)) {
                     System.out.print("* ");
                 }else {
                     System.out.print("  ");
