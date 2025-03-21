@@ -35,5 +35,7 @@ public class Prime {
         }
 
         System.out.println("Bus Allocations: " + busAllocations);
+
+
     }
 }
