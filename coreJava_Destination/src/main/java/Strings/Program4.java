@@ -10,7 +10,6 @@ public class Program4 {
 
     }
 
-
     public  String toUpperCase1(String str){
         StringBuilder sb = new StringBuilder(str);
         for(int i=0; i<str.length(); i++){

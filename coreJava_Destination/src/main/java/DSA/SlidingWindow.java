@@ -7,9 +7,9 @@ import java.util.stream.Stream;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-        String str ="Hello";
-        String needle = "ll";
-        System.out.println(strStr(str,needle));
+       isPalindrome("A man, a plan, a canal: Panama");
+
+
 
 
 
@@ -67,29 +67,65 @@ public class SlidingWindow {
 //        return value;
 //    }
 
-    public static int strStr(String haystack, String needle) {
-        int pos = 0;
-        for(int i=0; i<haystack.length()-needle.length()+1; i++){
-            if(haystack.charAt(i)== needle.charAt(0)){
-                pos = i;
-                break;
-            }
-        }
-        int start  = pos;
-        int end  = needle.length()-1;
-        int res = pos;
-        int needleStart=0;
-        int needleEnd= needle.length()-1;
+//    public static int strStr(String haystack, String needle) {
+//        int pos = 0;
+//        for(int i=0; i<haystack.length()-needle.length()+1; i++){
+//            if(haystack.charAt(i)== needle.charAt(0)){
+//                pos = i;
+//                break;
+//            }
+//        }
+//        int start  = pos;
+//        int end  = needle.length()-1;
+//        int res = pos;
+//        int needleStart=0;
+//        int needleEnd= needle.length()-1;
+//
+//        while(start <=end && needleStart<=needleEnd){
+//            if(haystack.charAt(start) != needle.charAt(needleStart)){
+//                res=-1;
+//                break;
+//            }
+//            start++;
+//            needleStart++;
+//        }
+//        return res;
+//    }
 
-        while(start <=end && needleStart<=needleEnd){
-            if(haystack.charAt(start) != needle.charAt(needleStart)){
-                res=-1;
-                break;
+
+//    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+//        int end = m+n-1;
+//        m--;
+//        n--;
+//        while( m>=0 && n>=0){
+//            if(nums2[n]>nums1[m]){
+//                nums1[end] = nums2[n];
+//                end--;
+//                n--;
+//            }else{
+//                nums1[end] = nums1[n];
+//                end--;
+//                m--;
+//            }
+//        }
+//        System.out.println(Arrays.toString(nums1));
+//    }
+
+
+    public static boolean isPalindrome(String s) {
+        s=s.toLowerCase();
+        s= s.replaceAll("[^a-zA-Z0-9]","");
+        System.out.println(s);
+        int start= 0;
+        int end = s.length()-1;
+        while (start<=end && end>=0){
+            if(s.charAt(start) != s.charAt(end)){
+                return false;
             }
             start++;
-            needleStart++;
+            end--;
         }
-        return res;
+        return true;
     }
 
 
