@@ -2,13 +2,13 @@ package DSA;
 
 import com.sun.jdi.request.ThreadStartRequest;
 
+import javax.print.attribute.standard.PresentationDirection;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-       isPalindrome("A man, a plan, a canal: Panama");
-
+      slidingWindow();
 
 
 
@@ -112,20 +112,41 @@ public class SlidingWindow {
 //    }
 
 
-    public static boolean isPalindrome(String s) {
-        s=s.toLowerCase();
-        s= s.replaceAll("[^a-zA-Z0-9]","");
-        System.out.println(s);
-        int start= 0;
-        int end = s.length()-1;
-        while (start<=end && end>=0){
-            if(s.charAt(start) != s.charAt(end)){
-                return false;
+//    public static boolean isPalindrome(String s) {
+//        s=s.toLowerCase();
+//        s= s.replaceAll("[^a-zA-Z0-9]","");
+//        System.out.println(s);
+//        int start= 0;
+//        int end = s.length()-1;
+//        while (start<=end && end>=0){
+//            if(s.charAt(start) != s.charAt(end)){
+//                return false;
+//            }
+//            start++;
+//            end--;
+//        }
+//        return true;
+//    }
+
+//    input:s = "1101100111"
+//    output:   1111100111
+    public static void slidingWindow(){
+        String str = "1101100111";
+        int left = 0;
+        int curr =0;
+        int ans = 0;
+        for(int right=0; right<str.length(); right++){
+            if(str.charAt(right) == '0'){
+                curr++;
             }
-            start++;
-            end--;
+            while(curr > 1){
+                if(str.charAt(left)==0){
+                    curr--;
+                }
+                left++;
+            }
+            ans = Math.max(ans, right - left + 1);
         }
-        return true;
     }
 
 
