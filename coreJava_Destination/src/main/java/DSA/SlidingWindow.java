@@ -8,7 +8,8 @@ import java.util.stream.Stream;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-      slidingWindow();
+        fixedWindow();
+
 
 
 
@@ -130,24 +131,47 @@ public class SlidingWindow {
 
 //    input:s = "1101100111"
 //    output:   1111100111
-    public static void slidingWindow(){
-        String str = "1101100111";
-        int left = 0;
-        int curr =0;
-        int ans = 0;
-        for(int right=0; right<str.length(); right++){
-            if(str.charAt(right) == '0'){
-                curr++;
-            }
-            while(curr > 1){
-                if(str.charAt(left)==0){
-                    curr--;
-                }
-                left++;
-            }
-            ans = Math.max(ans, right - left + 1);
+//    public static void slidingWindow(){
+//      int k= 100;
+//      int[] arr = {10,5,2,6};
+//
+//      int left =0;
+//      int curr =1;
+//      int ans =0;
+//
+//      for(int right=0; right< arr.length; right++){
+//          curr*=arr[right];
+//          while(curr>=k){
+//            curr = curr/arr[left];
+//            left++;
+//          }
+//          ans +=right-left+1;
+//      }
+//        System.out.println(ans);
+//    }
+
+
+    public static void fixedWindow(){
+        int k=4;
+        int[] arr = {1,12,-5,-6,50,3};
+        int startIndex = 0;
+        int endIndex = k;
+        int sum = 0;
+        int maxSum = sum;
+        for(int i=0; i<k; i++ ){
+            sum+=arr[i];
         }
+        while(endIndex < arr.length){
+            sum-=arr[startIndex];
+            startIndex++;
+            sum+=arr[endIndex];
+            endIndex++;
+            maxSum = Math.max(maxSum,sum);
+        }
+        System.out.println(maxSum/k);
     }
+
+
 
 
 }
