@@ -4,11 +4,16 @@ import com.sun.jdi.request.ThreadStartRequest;
 
 import javax.print.attribute.standard.PresentationDirection;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-        fixedWindow();
+        int [] nums = {1,2,3,1,2,3};
+        int k =2;
+       boolean res = containsNearbyDuplicate(nums,k);
+        System.out.println(res);
 
 
 
@@ -151,27 +156,58 @@ public class SlidingWindow {
 //    }
 
 
-    public static void fixedWindow(){
-        int k=4;
-        int[] arr = {1,12,-5,-6,50,3};
-        int startIndex = 0;
-        int endIndex = k;
-        int sum = 0;
-        int maxSum = sum;
-        for(int i=0; i<k; i++ ){
-            sum+=arr[i];
+//    public static void fixedWindow(){
+//        int k=4;
+//        int[] arr = {1,12,-5,-6,50,3};
+//        int startIndex = 0;
+//        int endIndex = k;
+//        int sum = 0;
+//        int maxSum = sum;
+//        for(int i=0; i<k; i++ ){
+//            sum+=arr[i];
+//        }
+//        while(endIndex < arr.length){
+//            sum-=arr[startIndex];
+//            startIndex++;
+//            sum+=arr[endIndex];
+//            endIndex++;
+//            maxSum = Math.max(maxSum,sum);
+//        }
+//        System.out.println(maxSum/k);
+//    }
+
+//    public static void fixedWindow(){
+//        String s = "abcabcbb";
+//        int out=0;
+//
+//        HashSet<Character> set = new HashSet<>();
+//
+//        int leftBound = 0;
+//        for(int rightBound=0; rightBound<s.length(); rightBound++){
+//            while(set.contains(s.charAt(rightBound))){
+//                set.remove(s.charAt(leftBound));
+//                leftBound++;
+//            }
+//            set.add(s.charAt(rightBound));
+//            out=Math.max(out,rightBound-leftBound+1);
+//        }
+//        System.out.println(out);
+//    }
+public static boolean containsNearbyDuplicate(int[] nums, int k) {
+    for(int i=0; i<nums.length; i++){
+        for(int j=i+1; j<nums.length; j++){
+            if(nums[i]==nums[j] && Math.abs(i-j)<=k){
+                return true;
+            }
         }
-        while(endIndex < arr.length){
-            sum-=arr[startIndex];
-            startIndex++;
-            sum+=arr[endIndex];
-            endIndex++;
-            maxSum = Math.max(maxSum,sum);
-        }
-        System.out.println(maxSum/k);
+
     }
-
-
-
-
+    return false;
 }
+}
+
+
+
+
+
+
