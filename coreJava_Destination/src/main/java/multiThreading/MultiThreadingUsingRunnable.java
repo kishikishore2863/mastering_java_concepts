@@ -1,8 +1,6 @@
 package multiThreading;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 class Operation11 implements Runnable{
     Scanner sc = new Scanner(System.in);
@@ -59,20 +57,16 @@ class Operation33 implements Runnable{
 
 public class MultiThreadingUsingRunnable {
     public static void main(String[] args) {
-//        Operation11 op1 = new Operation11();
-//        Thread thread1 = new Thread(op1);
-//        thread1.start();
-//        Operation22 op2 = new Operation22();
-//        Thread thread2 = new Thread(op2);
-//        thread2.start();
-//        Operation33 op3 = new Operation33();
-//        Thread thread3 = new Thread(op3);
-//        thread3.start();
+        Operation11 op1 = new Operation11();
+        Thread thread1 = new Thread(op1);
+        thread1.start();
+        Operation22 op2 = new Operation22();
+        Thread thread2 = new Thread(op2);
+        thread2.start();
+        Operation33 op3 = new Operation33();
+        Thread thread3 = new Thread(op3);
+        thread3.start();
 
-//        Map<String,Integer> map = new HashMap<>();
-//        map.put("hello",2);
-//        map.put("world",1);
-//        System.out.println(map);
 
 
 
