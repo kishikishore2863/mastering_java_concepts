@@ -1,6 +1,8 @@
 package TCS_NQT;
 
 
+import java.util.Arrays;
+
 class ListNode{
     int val;
     ListNode next;
@@ -57,6 +59,8 @@ class Solution {
         }
 //        System.out.println(prev.val);
 //        return ;
-       return slow;
+//       return slow;
+//        Arrays.sort();
+        return head;
     }
 }
