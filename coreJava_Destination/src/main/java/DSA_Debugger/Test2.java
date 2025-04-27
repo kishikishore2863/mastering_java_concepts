@@ -1,14 +1,14 @@
 package DSA_Debugger;
 
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class Test2 {
     public static void main(String[] args) {
-        System.out.println(makeGood("abBAcC"));
+//        System.out.println(simplifyPath("/home/"));
+//        System.out.println(simplifyPath("/home/user/Documents/../Pictures"));
+//        System.out.println(simplifyPath("/home//foo/"));
+
     }
 
 //    public static int[] twoSum(int[] nums, int target) {
@@ -106,4 +106,71 @@ public class Test2 {
         }
         return sb.toString();
     }
+
+//    public static String simplifyPath(String path) {
+//        Stack<Character> stack = new Stack();
+//        for(int i=0; i<path.length(); i++){
+//            if(path.charAt(i)>='A' && path.charAt(i)<='Z' || path.charAt(i)>='a' && path.charAt(i)<='z'){
+//                stack.push(path.charAt(i));
+//            }else if (path.charAt()){
+//
+//            }
+//        }
+//    }
+
+
 }
+
+
+class ManualStringSplit {
+    public static void main(String[] args) {
+        String str = "Hello World Java Program";
+        char delimiter = ' ';  // You can change this to any character
+
+        String[] result = manualSplit(str, delimiter);
+
+        for (String word : result) {
+            System.out.println(word);
+        }
+    }
+
+    public static String[] manualSplit(String str, char delimiter) {
+        int count = 1; // at least one word
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == delimiter) {
+                count++;
+            }
+        }
+
+        String[] parts = new String[count];
+        int partIndex = 0;
+        StringBuilder currentPart = new StringBuilder();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != delimiter) {
+                currentPart.append(str.charAt(i));
+            } else {
+                parts[partIndex++] = currentPart.toString();
+                currentPart.setLength(0); // reset
+            }
+        }
+
+        parts[partIndex] = currentPart.toString(); // add last part
+        return parts;
+    }
+
+
+
+}
+
+
+class Demo{
+    public static void main(String[] args) {
+//        String s ="/home//foo/";
+        String s ="/.../a/../b/c/../d/./";
+//         split = s.split("/");
+        System.out.println();
+
+    }
+}
+
