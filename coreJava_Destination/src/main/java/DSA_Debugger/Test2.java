@@ -1,6 +1,8 @@
 package DSA_Debugger;
 
 
+import DSA.ListNode;
+
 import java.util.*;
 
 public class Test2 {
@@ -8,6 +10,7 @@ public class Test2 {
 //        System.out.println(simplifyPath("/home/"));
 //        System.out.println(simplifyPath("/home/user/Documents/../Pictures"));
 //        System.out.println(simplifyPath("/home//foo/"));
+
 
     }
 
@@ -170,7 +173,47 @@ class Demo{
         String s ="/.../a/../b/c/../d/./";
 //         split = s.split("/");
         System.out.println();
+        Hashtable<Integer,Integer> hashtable =new Hashtable<>();
+        HashMap<Integer,Integer> hashMap =new HashMap<>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+//        arrayList.set();
 
+    }
+
+
+
+}
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode sortList(ListNode head) {
+        ListNode temp =head;
+        ListNode temp2 = head;
+
+        List<Integer> list = new ArrayList<>();
+        while(temp!=null){
+            list.add(temp.val);
+            temp = temp.next;
+        }
+        Collections.sort(list);
+
+        int start =0;
+        while(temp2!=null){
+            temp2.val = list.get(start);
+            start++;
+            temp2 = temp2.next;
+        }
+
+        return head;
     }
 }
 
