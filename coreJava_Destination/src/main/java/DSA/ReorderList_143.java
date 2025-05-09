@@ -36,7 +36,7 @@ public class ReorderList_143 {
 
 
         ListNode first = head;
-        ListNode second = slow.next;
+        ListNode second = reverse(slow.next);
         slow.next =null;
 
 
@@ -72,7 +72,7 @@ public class ReorderList_143 {
             prev = curr;
             curr = nextNode;
         }
-        return curr;
+        return prev;
     }
 
 }
