@@ -1,5 +1,6 @@
 package DSA;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -37,8 +38,15 @@ class Tree{
 
         Tree tree = new Tree();
         tree.postorderDfs(root);
-
+        ArrayList<Integer> arrayList =new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+//        arrayList.clear();
+        System.out.println(arrayList);
     }
+
 
     public void postorderDfs(TreeNode node) {
         if (node == null) {
