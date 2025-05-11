@@ -34,10 +34,8 @@ public class BinaryTree_Traversal {
         inOrder(root,inOrderList);
         System.out.println("inOrderList"+inOrderList);
 
-
-
-
     }
+
     public static void preOrder(TreeNode node, List<Integer> list){
         if(node == null){
 
@@ -56,6 +54,7 @@ public class BinaryTree_Traversal {
         postOrder(node.right,list);
         list.add(node.val);
     }
+
     public static void inOrder(TreeNode node, List<Integer> list){
         if(node == null){
             return;
