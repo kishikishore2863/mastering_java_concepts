@@ -24,7 +24,7 @@ class Supporter implements Comparator<Cricketer> {
 
     @Override
     public int compare(Cricketer o1, Cricketer o2) {
-        if(o1.runs<o2.runs){
+        if(o1.runs>o2.runs){
             return 1;
         }else {
             return -1;
